@@ -1,10 +1,23 @@
-d={'a':'1','b':'2','k':'2','c':'3','j':'1'}
-j={}
-for i in d.keys():
-    print(d[i])
-    if d[i] in j.keys() and  d[i] in d.values():
-        j[d[i]]=j[d[i]]+1
+f= open("chr21_genes_categories.txt",'r')
+lines= f.readlines()
+dic={}
+for line in lines:
+    l=line.split('\n')
+    if len(l)==2:
+        l=l[:1][0]
     else:
-        j[d[i]]=1
-print(j)
+        l=l[0]
+    
+    try:  
+        float(l[:3])
+        dic[float(l[:3])]= l[6:]
+    except:
+       
+        dic[list(dic.keys())[-1:][0]]= dic[list(dic.keys())[-1:][0]]+" "+l[6:]
+print(dic)    
+        
+        
+        
+         
+    
 
