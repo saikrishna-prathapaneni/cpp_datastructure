@@ -6,10 +6,10 @@ using namespace std;
 
 
 
-int sum(int ar[], vector<int> &sub,int total,int ind, int n){
+int sum(vector<int> &ar, vector<int> &sub,int total,int ind, int n){
 
-    if(ind==3){
-        if(total==n){
+    if(ind==ar.size()){
+        if(total==n&& sub.size()==2 ){
            return 1;
         }     
     return 0;
@@ -25,8 +25,8 @@ int sum(int ar[], vector<int> &sub,int total,int ind, int n){
 }
 
 int main(){
-    int ar[]={1,2,1};
+    vector<int> ar={40,20,60,30,10};
     int total=0;
     vector<int> s;
-    cout<<sum(ar,s,total,0,2)<<endl;
+    cout<<sum(ar,s,total,0,60)<<endl;
 }
